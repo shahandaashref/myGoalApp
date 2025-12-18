@@ -8,7 +8,7 @@ Built with **Flutter** and powered by **SQLite** for offline data persistence.
 
 | Home Screen | Add Goal | Statistics |
 |:---:|:---:|:---:|
-| <img src="screenshots/home.png" width="200"> | <img src="screenshots/add_goal.png" width="200"> | <img src="screenshots/stats.png" width="200"> |
+| <img src="![alt text](image-2.png)" width="200"> | <img src="![alt text](image-1.png)" width="200"> | <img src="![alt text](image.png)" width="200"> |
 
 ## ✨ Features
 
