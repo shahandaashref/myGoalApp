@@ -8,6 +8,7 @@ class CustomTextFormField extends StatefulWidget {
   final Widget? icon;
   final String? Function(String?)? validateFunction;
   final TextEditingController? controller;
+  final Function(String)? onChange;
 
   CustomTextFormField({
     super.key,
@@ -16,7 +17,8 @@ class CustomTextFormField extends StatefulWidget {
     required this.hintText,
     this.icon,
     this.controller,
-    this.validateFunction,
+    this.validateFunction, 
+    this.onChange,
   });
 
   @override
@@ -73,7 +75,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
               hintText: widget.hintText,
               prefixIcon: widget.icon,
             ),
+          onChanged: widget.onChange,
           ),
+
         ],
       ),
     );
