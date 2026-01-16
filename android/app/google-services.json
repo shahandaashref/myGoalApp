@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "102948744908",
+    "project_id": "ntilearnfirebase",
+    "storage_bucket": "ntilearnfirebase.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102948744908:android:207039df0064025a825c69",
+        "android_client_info": {
+          "package_name": "com.example.goal_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk31OoS0_8AMQ0YiC2ze7Wz1PVk8rwtpQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102948744908:android:984c4a13f41ab24d825c69",
+        "android_client_info": {
+          "package_name": "com.example.ntilearnfirebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk31OoS0_8AMQ0YiC2ze7Wz1PVk8rwtpQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

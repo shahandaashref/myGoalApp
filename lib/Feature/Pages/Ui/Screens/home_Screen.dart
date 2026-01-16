@@ -109,8 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
         itemBuilder: (context, index) {
           final goal = myGoals[index];
         
-          
-
+        
           return Container(
             alignment: Alignment.center,
             height: 100,

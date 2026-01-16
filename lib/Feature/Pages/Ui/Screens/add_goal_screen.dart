@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:goal_app/Custom/custom_text_field.dart'; 
-import 'package:goal_app/Feature/Pages/model/goal_data.dart'; // تأكدي إن المسار صح
-import 'package:goal_app/Feature/Pages/model/sqldb.dart';    // تأكدي إن المسار صح
+import 'package:goal_app/Feature/Pages/model/goal_data.dart'; 
+import 'package:goal_app/Feature/Pages/model/sqldb.dart';    
 
 class AddGoalScreen extends StatefulWidget {
   const AddGoalScreen({super.key});
@@ -19,23 +19,18 @@ class _AddGoalScreenState extends State<AddGoalScreen> {
 
   void saveGoal() async {
     if (_keyForm.currentState!.validate()) {
-      // 1. تجهيز البيانات
       Goal newGoal = Goal(
         title: _controller.text,
         isDone: goalIsDone,
         date: DateTime.now().toString().split(" ")[0],
       );
 
-      // 2. الحفظ في قاعدة البيانات
       int response = await sqlDb.insertData(newGoal);
-      
-      // 3. التحقق من النجاح والرجوع
+
       if (response > 0) {
         if (mounted) {
-           // هنا بنقفل الصفحة ونبعت "true" للهوم عشان تعمل ريفرش
-           // ملاحظة: شيلنا الـ SnackBar من هنا عشان يظهر في الهوم أحسن
-           // وشيلنا الـ clear و setState لأن الصفحة بتتقفل خلاص
-           Navigator.pop(context, true); 
+
+          Navigator.pop(context, true); 
         }
       }
     }
@@ -79,7 +74,6 @@ class _AddGoalScreenState extends State<AddGoalScreen> {
                   goalItem(),
                   
                   SizedBox(height: 40),
-
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
