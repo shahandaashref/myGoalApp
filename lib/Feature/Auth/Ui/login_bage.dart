@@ -2,8 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:goal_app/Custom/custom_text_field.dart';
 import 'package:goal_app/Feature/Auth/Ui/register_page.dart';
+import 'package:goal_app/Feature/Auth/Ui/user_data_provider.dart';
 import 'package:goal_app/Feature/Pages/Ui/Screens/home_place_holder.dart';
 import 'package:goal_app/firebase/auth_services.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -88,11 +90,13 @@ class _LoginPageState extends State<LoginPage> {
                 child: ElevatedButton(
                   onPressed: () async {
                     try {
-                      await FirebaseAuth.instance.signInWithEmailAndPassword(
-                        email: emailController.text.trim(),
-                        password: passwordController.text.trim(),
+                      UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword( email: emailController.text.trim(), password: passwordController.text.trim(), );
+                      Provider.of<UserDataProvider>(
+                        context,
+                        listen: false,
+                      ).setUser(
+                        userCredential.user!,
                       );
-
                       print("Login Success!");
                       Navigator.pushReplacement(
                         context,
@@ -164,16 +168,12 @@ class _LoginPageState extends State<LoginPage> {
       email: email,
       password: password,
     );
-    if (userCredential!=null&&userCredential.user!=null) {
-       print("Login Success!");
-        Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => HomePlaceHolder(),
-                        ),
-                      );               
-    }else{
-      
-    }
+    if (userCredential != null && userCredential.user != null) {
+      print("Login Success!");
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => HomePlaceHolder()),
+      );
+    } else {}
   }
 }

@@ -20,17 +20,10 @@ class MyApp extends StatelessWidget {
         print('User is signed in!');
       }
     });
-    return ChangeNotifierProvider(
-      create: (context) => Colormode(),
-      // providers: [
-      //   ChangeNotifierProvider(create: (context) => CounterProvder()),
-      //   ChangeNotifierProvider(create: (context) => Colormode()),
-      // ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        // theme: context.read<Colormode>().thememode(),
-        home: CounterPage(),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      // theme: context.read<Colormode>().thememode(),
+      home: LoginPage(),
     );
   }
 }

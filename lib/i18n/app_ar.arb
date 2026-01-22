@@ -1,0 +1,12 @@
+{
+    "@@locale": "ar",
+    "app_title": "تطبيقي",
+    "welcome_message": "مرحبًا بك في تطبيقي!",
+    "login_button": "تسجيل الدخول",
+    "logout_button": "تسجيل الخروج",
+    "settings_title": "الإعدادات",
+    "language_option": "اختر اللغة",
+    "profile_title": "الملف الشخصي",
+    "update_profile_button": "تحديث الملف الشخصي",
+    "error_message": "حدث خطأ. حاول مرة أخرى."
+}
